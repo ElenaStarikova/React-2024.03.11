@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import restaurants from './constants/mock.js'
+import Restaurants from './constants/mock.js'
 
 
 const rootElement = document.getElementById('root')
@@ -9,72 +9,72 @@ const root = ReactDOM.createRoot(rootElement)
 
 root.render(
 <>
-  <div> Dishoom
+  <div> {Restaurants[0].name}
     <h3>Меню</h3>
       <ul>
-        <li>Chicken tikka masala</li>
-        <li>Naan</li>
-        <li>Samosa</li>      
+        <li>{Restaurants[0].menu[0].name}</li>
+        <li>{Restaurants[0].menu[1].name}</li>
+        <li>{Restaurants[0].menu[2].name}</li>      
       </ul>
     <h3>Отзывы</h3>
       <ul>
-        <li>Not bad</li>
-        <li>No burgers</li>          
+        <li>{Restaurants[0].reviews[0].text}</li>
+        <li>{Restaurants[0].reviews[1].text}</li>          
       </ul>
   </div>
 
-  <div> Homeslice
+  <div> {Restaurants[1].name}
     <h3>Меню</h3>
       <ul>
-        <li>Margarita</li>
-        <li>Chef pizza</li>
+        <li>{Restaurants[1].menu[0].name}</li>
+        <li>{Restaurants[1].menu[1].name}</li>
       </ul>
     <h3>Отзывы</h3>
       <ul>
-        <li>Perfect Margarita</li>
-        <li>No burgers again. But Chef Pizza is the best one</li>
-        <li>Good for lunch</li>           
+        <li>{Restaurants[1].reviews[0].text}</li>
+        <li>{Restaurants[1].reviews[1].text}</li>
+        <li>{Restaurants[1].reviews[2].text}</li>           
       </ul>
   </div>
 
-  <div> Fabrique
+  <div> {Restaurants[2].name}
     <h3>Меню</h3>
       <ul>
-        <li>Cinnamon buns</li>
-        <li>Semlor</li>
-        <li>Saffron bun</li>
+        <li>{Restaurants[2].menu[0].name}</li>
+        <li>{Restaurants[2].menu[1].name}</li>
+        <li>{Restaurants[2].menu[2].name}</li>
       </ul>
     <h3>Отзывы</h3>
       <ul>
-        <li>Best bakery</li>
+        <li>{Restaurants[2].reviews[0].text}</li>
       </ul>
   </div>
 
-  <div> Flat Iron
+  <div> {Restaurants[3].name}
     <h3>Меню</h3>
       <ul>
-        <li>Flat Iron Steak</li>
-        <li>Flat Iron Burger</li>
+        <li>{Restaurants[3].menu[0].name}</li>
+        <li>{Restaurants[3].menu[1].name}</li>
       </ul>
     <h3>Отзывы</h3>
       <ul>
-        <li>Finally! This place is amazing place for breakfast, lunch, dinner and supper</li>
-        <li>Meat here is extremely delicious</li>
+        <li>{Restaurants[3].reviews[0].text}</li>
+        <li>{Restaurants[3].reviews[1].text}</li>
       </ul>
   </div>
 
   React.createElement("div", 
     children: [
-      "Flat Iron",
+      {Restaurants[0].name},
       React.createElement("h3", children: "Меню"),
       React.createElement("ul", children: [
-        React.createElement("li", children: "Flat Iron Steak"),
-        React.createElement("li", children: "Flat Iron Steak"),
+        React.createElement("li", children: {Restaurants[0].menu[0].name}),
+        React.createElement("li", children: {Restaurants[0].menu[1].name}),
       ])
       React.createElement("h3", children: "Отзывы"),
       React.createElement("ul", children: [
-        React.createElement("li", children: "Finally! This place is amazing place for breakfast, lunch, dinner and supper"),
-        React.createElement("li", children: "Meat here is extremely delicious"),
+        React.createElement("li", children: {Restaurants[0].reviews[0].text}),
+        React.createElement("li", children: {Restaurants[0].reviews[0].text}),
       ])
     ]
   )
