@@ -10,8 +10,8 @@ export const Restaurant = ({ restaurant }) => {
     console.log(restaurant)
     return (
         <div> 
-            {name ? name : "NoName"}
-            {/* {restaurant.name} */}
+            <h2>{name ? name : "NoName"}</h2> 
+            
             {!!menu?.length && (
                <div>
                   <h3>Меню</h3>

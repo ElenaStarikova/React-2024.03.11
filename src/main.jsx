@@ -4,7 +4,6 @@ import { restaurants } from './constants/mock.js';
 import { Restaurant } from './components/restaurant/component.jsx';
 import { Layout } from "./components/layout/component.jsx";
 
-
 const rootElement = document.getElementById('root')
 
 const root = ReactDOM.createRoot(rootElement)
