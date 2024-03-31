@@ -7,7 +7,7 @@ export const Restaurant = ({ restaurant }) => {
         return null
     }
     const { name,  menu, reviews} = { restaurant }
-    console.log(restaurant)
+    
     return (
         <div> 
             <h2>{name ? name : "NoName"}</h2> 
@@ -18,13 +18,18 @@ export const Restaurant = ({ restaurant }) => {
                   < Menu menu = {menu}/>
                </div>
             )}
-              
+               
+            
+           
             <h3>Отзывы</h3>
             {reviews?.length ? (
                 <div>
                     <Reviews reviews = {reviews}/>
                 </div>
-            ) : "Be the first"}
+            ) : "Be the first"} 
+            
+            
+            
         </div>
     )
     

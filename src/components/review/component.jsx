@@ -1,8 +1,8 @@
 export const Review = ({ review }) => {
-    
+
     return(
         <span>
-            {review}
+            {review.text}
         </span>
     )
 };
