@@ -1,7 +1,13 @@
+import { Counter } from '../counter/component'
+
 export const Dish = ({dish}) => {
     return(
-        <span>
-            {dish.name}
-        </span>
+        <div>
+            <span>
+                {dish.name}
+            </span> 
+            <Counter />
+        </div>
+        
     )
 };
