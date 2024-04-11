@@ -1,0 +1,19 @@
+.root{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    font-size: 30px;
+    align-self: center;
+    justify-self: center;
+}
+.infoHolder{
+    padding-top: 30px;
+    display: flex;
+    gap: 200px;
+    justify-content: center;
+}
+.menuTitle, .reviewTitle{
+    font-size: 30px;
+}

@@ -1,0 +1,12 @@
+.root{
+    height: 150px;
+    background-color: rgb(97, 97, 106);
+    position: relative;
+}
+.buttonsHolder{
+    position: absolute;
+    top: 50px;
+    display: flex;
+    gap: 20px;
+    right: 50px;
+}
