@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import { restaurants } from '../../constants/mock.js';
 import { Restaurant } from '../restaurant/component.jsx';
 import { RestarauntTabs } from '../restaurants-tab/component.jsx';
 import { getStorageItem, setStorageItem } from '../../utils/storage.js';
@@ -11,19 +10,18 @@ const ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY = 'currentRestaurantIndex'
 export const Restaurants = () => {
     
         //   useState() передается функция, чтобы вызываться только 1 раз на маунте, если сразу поставить в () значение будет обновляться при каждом рендере
-        const [currentRestaurantIndex, setCurrentRestaurantIndex] = useState(() =>
+        const [currentRestaurantId, setCurrentRestaurantId] = useState(() =>
             Number(getStorageItem(ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY))
         )
-        const currentRestaurant = restaurants[currentRestaurantIndex]
+        const currentRestaurant = currentRestaurantId
     return (
         <>
-           <RestarauntTabs 
-                    restaurants = {restaurants}            
+           <RestarauntTabs                              
                     onTabClick = {(index) => {
-                        setCurrentRestaurantIndex;
-                        setStorageItem(ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY, index);
+                        setCurrentRestaurantId;
+                        setStorageItem(ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY, id);
                     }}
-                    currentIndex = {currentRestaurantIndex}
+                    currentId = {currentRestaurantId}
                     className={styles.left}
                 />
                 {currentRestaurant ? (

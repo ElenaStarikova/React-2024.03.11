@@ -7,7 +7,7 @@ export const Restaurant = ({ restaurant}) => {
         return null
     }
     const { name,  menu, reviews} = restaurant 
-    console.log(restaurant)
+   
     return (
         <div className={styles.root}> 
            <div className={styles.title}>{name ? name : "NoName"}</div>
