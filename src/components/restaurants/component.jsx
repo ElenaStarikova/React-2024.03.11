@@ -11,22 +11,22 @@ const ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY = 'currentRestaurantIndex'
 export const Restaurants = () => {
     
         //   useState() передается функция, чтобы вызываться только 1 раз на маунте, если сразу поставить в () значение будет обновляться при каждом рендере
-        const [currentRestaurantid, setCurrentRestaurantid] = useState(() =>
+        const [currentRestaurantId, setCurrentRestaurantId] = useState(() =>
             Number(getStorageItem(ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY))
         )
-        const currentRestaurant = currentRestaurantid
+        // const currentRestaurant = currentRestaurantId
     return (
         <>
            <RestarauntTabs                              
                     onTabClick = {(id) => {
-                        setCurrentRestaurantid;
+                        setCurrentRestaurantId;
                         setStorageItem(ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY, id);
                     }}
-                    currentId = {currentRestaurantid}
+                    // currentId = {currentRestaurantId}
                     className={styles.left}
                 />
-                {currentRestaurant ? (
-                <Restaurant restaurant = {currentRestaurant} />)
+                {currentRestaurantId ? (
+                <Restaurant restaurant = {currentRestaurantId} />)
                 : (<span>SelectRestaurant</span>)
                 } 
         </>

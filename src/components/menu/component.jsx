@@ -5,8 +5,8 @@ export const Menu = ({dishIds}) => {
     
     return (
         <div className={styles.root}>
-            {dishIds.map((dishId) => (
-                <Dish dishId = {dishId} className={styles.dish}/>                              
+            {dishIds.map((id) => (
+                <Dish dishId = {id} className={styles.dish}/>                              
             ))}
         </div>
     )

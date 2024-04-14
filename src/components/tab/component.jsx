@@ -3,8 +3,8 @@ import { Button } from '../button/component.jsx';
 import { useSelector } from 'react-redux';
 
 
-export const RestaurantTab = ({ restaurantid, isActive, onClick }) => {
-    const restaurant = useSelector(state => state.restaurant.entities[restaurantid])
+export const RestaurantTab = ({ restaurantId, isActive, onClick }) => {
+    const restaurant = useSelector(state => state.restaurant.entities[restaurantId])
 
     if (!restaurant) {
         return null;
@@ -12,6 +12,7 @@ export const RestaurantTab = ({ restaurantid, isActive, onClick }) => {
 
     return (
         <Button
+            
             onClick={onClick} 
             disabled={isActive}
             className={styles.tabButton}
