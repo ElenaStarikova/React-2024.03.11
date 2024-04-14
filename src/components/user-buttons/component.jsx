@@ -10,7 +10,7 @@ export const UserButtons = () => {
  return(
     <div>
         {!!user && <span>{user}</span>}
-         <Button onClick={() => {() => (isAuthorized ? logout(): login('Lena'))}} viewVariant='secondary' size={SIZES.l}>
+         <Button onClick={() => (isAuthorized ? logout(): login('Lena'))} viewVariant='secondary' size={SIZES.l}>
             {isAuthorized ? "logout" : "login"}
          </Button>
     </div>

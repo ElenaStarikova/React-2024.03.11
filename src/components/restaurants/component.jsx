@@ -5,23 +5,24 @@ import { RestarauntTabs } from '../restaurants-tab/component.jsx';
 import { getStorageItem, setStorageItem } from '../../utils/storage.js';
 import styles from './styles.module.scss';
 
+
 const ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY = 'currentRestaurantIndex'
 
 export const Restaurants = () => {
     
         //   useState() передается функция, чтобы вызываться только 1 раз на маунте, если сразу поставить в () значение будет обновляться при каждом рендере
-        const [currentRestaurantId, setCurrentRestaurantId] = useState(() =>
+        const [currentRestaurantid, setCurrentRestaurantid] = useState(() =>
             Number(getStorageItem(ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY))
         )
-        const currentRestaurant = currentRestaurantId
+        const currentRestaurant = currentRestaurantid
     return (
         <>
            <RestarauntTabs                              
-                    onTabClick = {(index) => {
-                        setCurrentRestaurantId;
+                    onTabClick = {(id) => {
+                        setCurrentRestaurantid;
                         setStorageItem(ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY, id);
                     }}
-                    currentId = {currentRestaurantId}
+                    currentId = {currentRestaurantid}
                     className={styles.left}
                 />
                 {currentRestaurant ? (

@@ -6,8 +6,8 @@ export const dishSlice = createSlice({
     initialState: {
         entities: normalizedDishes.reduce((acc, dish) => {
             acc[dish.id] = dish;
-            
-            return acc
+
+            return acc;
         }, {}),
         ids: normalizedDishes.map(({id}) => id)
     },

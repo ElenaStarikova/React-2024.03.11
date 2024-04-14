@@ -1,14 +1,22 @@
 import styles from './styles.module.scss';
+import { Button } from '../button/component.jsx';
+import { useSelector } from 'react-redux';
 
 
-export const Tab = ({ title, isActive, onClick }) => {
+export const RestaurantTab = ({ restaurantid, isActive, onClick }) => {
+    const restaurant = useSelector(state => state.restaurant.entities[restaurantid])
+
+    if (!restaurant) {
+        return null;
+    }
+
     return (
-        <button 
+        <Button
             onClick={onClick} 
             disabled={isActive}
             className={styles.tabButton}
         >
-        {title}
-        </button>
+        {restaurant?.name}
+        </Button>
     )
 }

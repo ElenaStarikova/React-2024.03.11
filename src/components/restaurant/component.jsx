@@ -1,11 +1,16 @@
 import { Reviews } from '../reviews/component';
 import { Menu } from '../menu/component';
+import { useSelector } from 'react-redux';
 import styles from './styles.module.scss';
 
-export const Restaurant = ({ restaurant}) => {
+export const Restaurant = ({ restaurantid }) => {
+    const restaurant = useSelector(
+        (state) => state.restaurant.entities[restaurantid])
+
     if(!restaurant) {
         return null
     }
+
     const { name,  menu, reviews} = restaurant 
    
     return (
@@ -16,14 +21,14 @@ export const Restaurant = ({ restaurant}) => {
                  {!!restaurant.menu?.length && (
                <div className={styles.menuHolder}>
                   <h3 className={styles.menuTitle}>Меню</h3>
-                  < Menu menu = {menu}/>
+                  < Menu dishIds = {menu}/>
                </div>
                 )}
                 <div>
                     <h3 className={styles.reviewTitle}>Отзывы</h3>
                     {reviews?.length ? (
                     <div>
-                        <Reviews reviews = {reviews}/>
+                        <Reviews reviewIds = {reviews}/>
                     </div>
                     ) : "Be the first"}
                 </div>
