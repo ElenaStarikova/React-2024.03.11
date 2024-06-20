@@ -4,7 +4,10 @@ import { useCurrentUser } from "../../contexts/user.js"
 import styles from './styles.module.scss';
 import classNames from 'classnames'
 
-export const Dish = ({dish, className}) => {
+export const Dish = ({dishId, className}) => {
+    const dish = useSelector(
+        (state) => state.review.entities[dishId]
+    )
     const [amount, setAmount] =useState(0);
     const { user } = useCurrentUser();
     return(
