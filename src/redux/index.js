@@ -9,4 +9,4 @@ export const store = configureStore({
     reducer: combineSlices(restaurantSlice, dishSlice, reviewSlice, userSlice),
 })
 
-console.log(store.getState())
+// console.log(store.getState())

@@ -18,15 +18,18 @@ export const Restaurants = () => {
     return (
         <>
            <RestarauntTabs                              
-                    onTabClick = {(id) => {
-                        setCurrentRestaurantId;
-                        setStorageItem(ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY, id);
-                    }}
-                    // currentId = {currentRestaurantId}
+                    
+                    // onTabClick = {(id) => {
+                    //     setCurrentRestaurantId;
+                    //     setStorageItem(ACTIVE_RESTARAUNT_INDEX_STORAGE_KEY, id);
+                    // }}
+
+                    onTabClick={setCurrentRestaurantId}
+                    currentRestaurantId = {currentRestaurantId}
                     className={styles.left}
                 />
                 {currentRestaurantId ? (
-                <Restaurant restaurant = {currentRestaurantId} />)
+                <Restaurant restaurantId = {currentRestaurantId} />)
                 : (<span>SelectRestaurant</span>)
                 } 
         </>

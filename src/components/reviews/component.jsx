@@ -6,7 +6,7 @@ export const Reviews = ({reviewIds, className}) => {
     return (
         <div className={styles.root}>           
             {reviewIds.map((reviewId) => (
-                <Review review = {reviewId} />                
+                <Review reviewId = {reviewId} />                
             ))}  
         </div>
     ) 

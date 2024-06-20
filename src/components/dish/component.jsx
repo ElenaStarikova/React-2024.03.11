@@ -6,10 +6,12 @@ import classNames from 'classnames'
 
 export const Dish = ({dishId, className}) => {
     const dish = useSelector(
-        (state) => state.review.entities[dishId]
+        (state) => state.dish.entities[dishId]
     )
-    const [amount, setAmount] =useState(0);
-    const { user } = useCurrentUser();
+    // const dish = useSelector(state)
+    // console.log(dish)
+    // const [amount, setAmount] =useState(0);
+    // const { user } = useCurrentUser();
     return(
         <div className={classNames(styles.root, className)}>
             {dish.name}
